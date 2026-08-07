@@ -1,0 +1,13 @@
+name: vitals-service
+port: 8307
+lang: python
+description: "vitals-service \u2014 domain: ehr"
+http_deps:
+- patients-service
+- encounters-service
+- audit-log-service
+publishes:
+- audit.event
+subscribes:
+- encounter.started
+- device.reading
